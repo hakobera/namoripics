@@ -25,14 +25,15 @@
   </div>
 </div>
 <script id="thumbnailTemplate" type="text/x-jquery-tmpl">
-  <li class="thumbnail ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-up-c"">
-    <div class="img">
-      <img src="${thumbnailUrl}">
-    </div>
-    <div class="msg">
-      <p>${timestamp}</p>
-      <p>${message}</p>
-    </div>
+  <li class="thumbnail ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-up-c">
+      <div class="img">
+        <img src="${thumbnailUrl}">
+      </div>
+      <div class="msg">
+        <p>${timestamp}</p>
+        <p><a href="http://twitpic.com/${shortId}" target="twitpic">${message}</a></p>
+      </div>
+    </a>
     <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
   </li>
 </script>
