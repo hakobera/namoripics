@@ -4,10 +4,12 @@
   , "private": true
   , "dependencies": {
       "express": "2.4.4"
-    , "jade": ">= 0.0.1"
-    , "twitpic": ">= 0.0.1"
-    , "hiredis": ">= 0.0.1"
-    , "redis": ">= 0.0.1"
-    , "async": ">= 0.0.1"
+    , "twitpic": "3.0.0"
+    , "hiredis": "0.1.12"
+    , "redis": "0.6.7"
+    , "async": "0.1.9"
+  }
+  , "devDependencies": {
+      "vows": "0.5.10"
   }
 }

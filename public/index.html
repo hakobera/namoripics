@@ -3,12 +3,9 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no"/>
-  <meta name=”apple-mobile-web-app-capable” content=”yes”/>
-  <meta name=”apple-mobile-web-app-status-bar-style” content=”black-translucent”/>
   <title>namoream</title >
   <link rel="apple-touch-icon" href="http://a2.twimg.com/profile_images/1498091471/namoriko3_reasonably_small.jpg"/>
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css" />
-  <link rel="stylesheet" href="/stylesheets/style.css"/>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.css"/>
   <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script>
   <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
   <script src="http://code.jquery.com/mobile/1.0b2/jquery.mobile-1.0b2.min.js"></script>
@@ -17,24 +14,24 @@
 <body>
 <div data-role="page" id="home">
   <div data-role="header" data-position="fixed">
-    <h1>namoream</h1>
+    <h1>_namori_pics</h1>
     <a id="refresh" href="#" data-icon="refresh" class="ui-btn-right">Reload</a>
   </div>
   <div data-role="content">
-    <ul id="thumbnails" data-role="listview" data-theme="c"></ul>
+    <ul id="thumbnails" data-role="listview" data-theme="c">
+      <li id="loadNext">
+        <a id="loadNextLink"><h3>Load Next 20 pics</h3></a>
+      </li>
+    </ul>
   </div>
 </div>
 <script id="thumbnailTemplate" type="text/x-jquery-tmpl">
-  <li class="thumbnail ui-btn ui-btn-icon-right ui-li ui-li-has-thumb ui-btn-up-c">
-      <div class="img">
-        <img src="${thumbnailUrl}">
-      </div>
-      <div class="msg">
-        <p>${timestamp}</p>
-        <p><a href="http://twitpic.com/${shortId}" target="twitpic">${message}</a></p>
-      </div>
+  <li class="thumbnail">
+    <a href="http://twitpic.com/${shortId}" target="twitpic">
+      <img src="${thumbnailUrl}" title="${message}" class="reloadable">
+      <p>${message}</p>
+      <p>${timestamp}</p>
     </a>
-    <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
   </li>
 </script>
 </body>

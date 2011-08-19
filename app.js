@@ -27,19 +27,21 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/images', function(req, res) {
-  twitpics.show(namori, function(images) {
-    res.send({ images: images });
+app.get('/search/:user/:page', function(req, res, next) {
+  var usr = req.params['user'],
+      page = req.params['page'];
+  console.log(usr);
+  twitpics.search(usr, page, function(err, images) {
+    if (err) {
+      next(err)
+    } else {
+      res.send({ images: images });
+    }
   });
 });
 
-twitpics.load(namori);
+//twitpics.load(namori);
 
 var port = process.env.PORT || 3000;
 app.listen(port);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
-
-var interval = 60 * 5 * 1000;
-setInterval(function() {
-  twitpics.load(namori);
-}, interval);
