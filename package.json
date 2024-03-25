@@ -3,7 +3,7 @@
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
-      "express": "2.4.4"
+      "express": "4.19.2"
     , "twitpic": "3.0.0"
     , "hiredis": "0.1.12"
     , "redis": "0.6.7"
